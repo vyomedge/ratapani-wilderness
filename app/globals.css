@@ -1,0 +1,288 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-body text-[1.0625rem] text-ink antialiased md:text-lg;
+  }
+  ::selection {
+    background: #e3e9da;
+    color: #1f2921;
+  }
+  :focus-visible {
+    outline: 2px solid #59704e;
+    outline-offset: 3px;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8;
+  }
+  .btn {
+    @apply relative inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-7 py-3 font-body text-[0.95rem] font-semibold transition-colors duration-200;
+  }
+  .btn-moss {
+    @apply btn bg-moss text-paper hover:bg-moss-deep;
+  }
+  .btn-outline {
+    @apply btn border border-ink text-ink hover:bg-ink/[0.06];
+  }
+  .btn-gold {
+    @apply btn bg-gold text-night hover:bg-[#D4B390];
+  }
+  .btn > svg:last-child {
+    transition: transform 0.25s ease;
+  }
+  .btn:hover > svg:last-child {
+    transform: translateX(3px);
+  }
+  .chip {
+    @apply min-h-[44px] shrink-0 rounded-full border border-rule bg-paper-card px-5 text-[0.95rem] text-ink-soft transition-colors hover:border-moss hover:text-moss;
+  }
+  .chip-on {
+    @apply border-moss bg-moss text-paper hover:text-paper;
+  }
+  .prose-field p {
+    @apply mb-4 leading-[1.75] text-ink-soft;
+  }
+  .prose-field p:last-child {
+    @apply mb-0;
+  }
+  .prose-field a,
+  .link {
+    @apply font-semibold text-moss underline decoration-moss/40 underline-offset-4 hover:decoration-moss;
+  }
+  .prose-field strong {
+    @apply font-semibold text-ink;
+  }
+  .plate {
+    @apply border border-rule bg-paper-card p-2.5 sm:p-3;
+  }
+  .field-note {
+    @apply relative border border-rule bg-paper-note px-6 pb-6 pt-7;
+    transform: rotate(var(--tilt, -0.6deg));
+  }
+  .field-note::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 72px;
+    height: 16px;
+    margin-left: -36px;
+    background: rgba(214, 206, 193, 0.75);
+    transform: rotate(-2deg);
+  }
+  .field-table {
+    @apply w-full min-w-[680px] border-collapse text-left text-[0.95rem];
+  }
+  .field-table th {
+    @apply border-b border-rule bg-paper-deep px-4 py-3 text-label font-semibold uppercase text-lichen;
+  }
+  .field-table td {
+    @apply border-b border-rule px-4 py-3.5 align-top text-ink-soft;
+  }
+  .field-table tr:last-child td {
+    @apply border-b-0;
+  }
+  .field-table td:first-child {
+    @apply font-display text-[1.05rem] text-ink;
+  }
+  .check {
+    accent-color: #59704e;
+  }
+}
+
+/* Subtle paper grain */
+.paper-grain {
+  background-image: radial-gradient(rgba(134, 97, 61, 0.05) 1px, transparent 1px), radial-gradient(rgba(31, 41, 33, 0.03) 1px, transparent 1px);
+  background-size: 22px 22px, 13px 13px;
+  background-position: 0 0, 7px 9px;
+}
+.contour {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='360' viewBox='0 0 520 360'%3E%3Cg fill='none' stroke='%23A67C52' stroke-opacity='0.13' stroke-width='1'%3E%3Cpath d='M-10 60c80 30 140-30 240 5s150 50 300-5'/%3E%3Cpath d='M-10 110c90 25 150-35 260 3s140 45 280-5'/%3E%3Cpath d='M-10 165c70 40 160-20 270 12s140 40 270-8'/%3E%3Cpath d='M-10 220c100 30 140-30 250 8s160 50 290 0'/%3E%3Cpath d='M-10 280c80 35 150-25 260 4s150 45 280-5'/%3E%3C/g%3E%3C/svg%3E");
+}
+.night-sky {
+  position: relative;
+  isolation: isolate;
+}
+.night-sky::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(1px 1px at 12% 30%, rgba(241, 246, 249, 0.7), transparent),
+    radial-gradient(1px 1px at 28% 62%, rgba(241, 246, 249, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 46% 22%, rgba(241, 246, 249, 0.8), transparent),
+    radial-gradient(1px 1px at 64% 48%, rgba(241, 246, 249, 0.55), transparent),
+    radial-gradient(1px 1px at 78% 18%, rgba(241, 246, 249, 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 88% 66%, rgba(201, 162, 122, 0.8), transparent),
+    radial-gradient(1px 1px at 6% 80%, rgba(241, 246, 249, 0.5), transparent),
+    radial-gradient(1px 1px at 56% 84%, rgba(241, 246, 249, 0.45), transparent);
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Nav underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.nav-link:hover::after,
+.nav-link[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+/* FAQ */
+details.faq > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.faq > summary::-webkit-details-marker {
+  display: none;
+}
+details.faq[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* ---------- Motion (progressive enhancement) ---------- */
+.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js-motion .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.js-motion .field-note.reveal.is-visible {
+  transform: rotate(var(--tilt, -0.6deg));
+}
+/* Line drawings draw themselves in */
+.js-motion .reveal .sketch path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: stroke-dashoffset 2.2s cubic-bezier(0.6, 0, 0.2, 1) 0.2s;
+}
+.js-motion .reveal.is-visible .sketch path {
+  stroke-dashoffset: 0;
+}
+.js-motion .reveal .sketch path[stroke-dasharray='2 7'] {
+  stroke-dasharray: 2 7;
+  stroke-dashoffset: 0;
+}
+/* Chapter rule grows */
+.js-motion .reveal .marker-rule {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+.js-motion .reveal.is-visible .marker-rule {
+  transform: none;
+}
+/* Hero copy entrance (H1 moves but is never hidden, so LCP is not delayed) */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rise-move {
+  from { transform: translateY(18px); }
+  to { transform: none; }
+}
+.hero-in > * {
+  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-in > h1 {
+  animation-name: rise-move;
+}
+.hero-in > :nth-child(2) { animation-delay: 0.06s; }
+.hero-in > :nth-child(3) { animation-delay: 0.12s; }
+.hero-in > :nth-child(4) { animation-delay: 0.2s; }
+.hero-in > :nth-child(5) { animation-delay: 0.28s; }
+.hero-in > :nth-child(6) { animation-delay: 0.36s; }
+@media (hover: hover) {
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    border-color: #a67c52;
+  }
+}
+/* Twinkling stars in night sections */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.night-sky::before {
+  animation: twinkle 6s ease-in-out infinite;
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 60;
+    background: #59704e;
+    transform-origin: 0 50%;
+    animation: grow-x linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes grow-x {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js-motion .reveal { opacity: 1; transform: none; }
+  .js-motion .reveal .sketch path { stroke-dashoffset: 0; }
+  .js-motion .reveal .marker-rule { transform: none; }
+  .scroll-progress { display: none; }
+}
+
+/* Print: only the checklist */
+@media print {
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; inset: 0 auto auto 0; width: 100%; border: 0; }
+  .no-print { display: none !important; }
+}
