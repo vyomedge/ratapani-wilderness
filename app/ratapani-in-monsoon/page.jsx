@@ -2,13 +2,15 @@ import Link from 'next/link';
 import { ArrowRight, Droplets, Leaf, CloudFog, Bug, Car, Landmark, Coffee, Sunset, Home } from 'lucide-react';
 import Img from '@/components/Img';
 import JsonLd from '@/components/JsonLd';
+import { FAQS_MONSOON as FAQS } from '@/content/faqs';
 import Checklist from '@/components/Checklist';
 import { Rain } from '@/components/Sketch';
 import { PageHero, SectionHead, AnswerBox, DoDont, FieldNote, Faq, Sources, NextPage } from '@/components/ui';
 import { PAGES, SAFARI_SITE, OFFICIAL_PORTAL } from '@/lib/site';
-import { pageMetadata, webPageSchema, itemListSchema } from '@/lib/seo';
+import { pageMetadata, webPageSchema, itemListSchema, tripSchema } from '@/lib/seo';
 
 const META = {
+  section: 'Seasons',
   title: 'Ratapani in Monsoon: Rainy Season Trip Near Bhopal',
   description:
     'Ratapani in monsoon: what is open and closed from July to September, the best monsoon places near Bhopal, a one-day plan, safety tips and a packing list.',
@@ -77,32 +79,6 @@ const TIMELINE = [
   ['5:30 pm', Home, 'Back in Bhopal', 'Home before dark, when roads and forest edges are least safe.'],
 ];
 
-const FAQS = [
-  {
-    q: 'Is Ratapani open in monsoon?',
-    a: 'Partly. In Madhya Pradesh, the core zones of tiger reserves close to visitors from 1 July to 30 September, while buffer areas may stay open in a restricted manner. Ratapani’s official safari season runs from 15 October to 15 June. The Bhimbetka rock shelters stay open every day of the year.',
-  },
-  {
-    q: 'Can I do a Ratapani safari in the rainy season?',
-    a: 'Regular core-zone safaris do not run in the monsoon. If any buffer-zone safaris are offered, they will be listed on the official MP Forest booking portal, so check there before you travel.',
-  },
-  {
-    q: 'Is Bhimbetka open in the rainy season?',
-    a: 'Yes. The Bhimbetka rock shelters, managed by the Archaeological Survey of India, are open daily from about sunrise to sunset throughout the year. The paths can be slippery after rain.',
-  },
-  {
-    q: 'What are the best monsoon places near Bhopal?',
-    a: 'Around Ratapani, the best monsoon outings from Bhopal are the Bhimbetka rock shelters, the green highway drive towards Obaidullaganj, the Kolar Dam area, and the forests at Kathotiya and Kerwa.',
-  },
-  {
-    q: 'Are there waterfalls in Ratapani?',
-    a: 'Ratapani has no well-known waterfall that is open to visitors. Seasonal streams run over the sandstone after heavy rain, and Kathotiya, about 25 km from Bhopal, is known for small seasonal falls near its rock shelters. Never enter closed forest areas to look for them.',
-  },
-  {
-    q: 'Is it safe to visit Ratapani in monsoon?',
-    a: 'Yes, if you stay in open, public places. Avoid crossing flowing streams, keep off wet rock edges, watch for snakes in long grass, shelter from lightning and drive only in daylight. Do not enter closed forest zones.',
-  },
-];
 
 export default function MonsoonPage() {
   return (
@@ -114,6 +90,12 @@ export default function MonsoonPage() {
             'Monsoon places near Bhopal around Ratapani',
             PLACES.map((p) => ({ '@type': 'TouristAttraction', name: p.name, description: p.why }))
           ),
+          tripSchema({
+            name: 'One-day monsoon trip from Bhopal to Ratapani',
+            description: 'A daylight loop from Bhopal to the Bhimbetka rock shelters, the Ratapani forest edge and the Kolar or Kerwa reservoirs during the monsoon.',
+            path: META.path,
+            stops: TIMELINE.map(([time, , name, text]) => ({ name: `${time}: ${name}`, text })),
+          }),
         ]}
       />
       <PageHero

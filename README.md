@@ -37,4 +37,4 @@ A field-journal style nature guide to the Ratapani forest near Bhopal, built wit
 
 ## SEO built in
 
-Keyword titles, descriptions and headings; one H1 per page; image alt text; canonical + en-IN hreflang; Open Graph and Twitter images per page; JSON-LD (Organization, WebSite, TouristDestination, Article, BreadcrumbList, FAQPage, ItemList, Speakable); sitemap with images; robots.txt open to AI search bots; `/llms.txt`; redirects for short URLs; HSTS and security headers; IndexNow.
+Keyword titles, descriptions and headings; one H1 per page; image alt text; canonical + en-IN hreflang; Open Graph and Twitter images per page; JSON-LD (Organization, WebSite, TouristDestination, Article, BreadcrumbList, FAQPage, ItemList, Speakable); sitemap with images; robots.txt open to AI search bots; `/llms.txt` and `/llms-full.txt` (all FAQs in plain text); TouristTrip schema for the monsoon day plan; Open Graph article dates, section and tags; redirects for short URLs; HSTS and security headers; IndexNow.

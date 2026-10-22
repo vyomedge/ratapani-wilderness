@@ -17,6 +17,9 @@ Key facts (last reviewed ${SITE.lastReviewed}; sources: MP Forest Department, MP
 - Trekking: Ginnorgarh Fort trek (about 2 km uphill from the Delawadi side; Forest Department permission and guide needed), Bhimbetka hill walk (ASI site, open daily), Kathotiya (about 25 km from Bhopal), Kerwa (about 15 km).
 - Birdwatching: best November–March; Bhoj Wetland in Bhopal hosts bar-headed geese and other winter migrants; Indian pitta in July–September.
 
+## Optional
+- [Full guide text with all FAQs](${SITE.url}/llms-full.txt)
+
 ## Guides
 - [Ratapani forest: wilderness near Bhopal](${SITE.url}/): what the Ratapani wilderness is, four layers (rock, forest, water, sky), seasons, forest manners
 - [Trekking near Bhopal](${SITE.url}/ratapani-trekking): Ginnorgarh Fort, Bhimbetka, Kathotiya and Kerwa treks, rules, best months, checklist

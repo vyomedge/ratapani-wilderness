@@ -1,5 +1,6 @@
 import { ArrowRight, Binoculars, Footprints, Smartphone, VolumeX, Shirt, Sunrise } from 'lucide-react';
 import JsonLd from '@/components/JsonLd';
+import { FAQS_BIRDWATCHING as FAQS } from '@/content/faqs';
 import BirdGuide from '@/components/BirdGuide';
 import Checklist from '@/components/Checklist';
 import { Feather } from '@/components/Sketch';
@@ -8,6 +9,7 @@ import { PAGES, SAFARI_SITE } from '@/lib/site';
 import { pageMetadata, webPageSchema, itemListSchema } from '@/lib/seo';
 
 const META = {
+  section: 'Birdwatching',
   title: 'Birdwatching Near Bhopal: Birds of Ratapani & Best Spots',
   description:
     'Birdwatching near Bhopal: 249 bird species in Ratapani, the best birding spots, a 12-bird field guide, a month-by-month calendar and a printable checklist.',
@@ -97,32 +99,6 @@ const TIPS = [
   [Footprints, 'Keep your distance', 'Never chase birds or use call playback near nests.'],
 ];
 
-const FAQS = [
-  {
-    q: 'How many bird species are found in Ratapani?',
-    a: 'The Madhya Pradesh Forest Department records 249 bird species in Ratapani. They include the Indian paradise flycatcher (Madhya Pradesh’s state bird), Indian peafowl, crested serpent eagle, kingfishers, woodpeckers and the critically endangered white-rumped vulture.',
-  },
-  {
-    q: 'What is the best time for birdwatching near Bhopal?',
-    a: 'November to March is the best season, when winter migrants join the resident birds; MP Tourism calls it the peak season for migratory birds. The first three hours after sunrise are the most productive time of day. The monsoon (July to September) is the time for the Indian pitta.',
-  },
-  {
-    q: 'What are the best birdwatching spots near Bhopal?',
-    a: 'Near Bhopal, the best birding spots are the Bhoj Wetland (Upper Lake) for winter waterbirds, the Kerwa and Kolar forests for raptors and owls, the Bhimbetka rock shelters for forest-edge birds on foot, and the Ratapani safari routes for forest birds in the tiger reserve.',
-  },
-  {
-    q: 'Can you go birdwatching on a Ratapani safari?',
-    a: 'Yes. A morning safari through Jhiri or Delawadi gate is the only way to bird inside the reserve. You must stay in the vehicle, so bring binoculars and ask your guide to stop for birds as well as mammals.',
-  },
-  {
-    q: 'What is the state bird of Madhya Pradesh?',
-    a: 'The Indian paradise flycatcher (Dudhraj) is the state bird of Madhya Pradesh. It is found in Ratapani’s shady forests and along streams, and adult males have very long white or rufous tail streamers.',
-  },
-  {
-    q: 'Which binoculars are best for birdwatching in Ratapani?',
-    a: 'An 8x42 binocular is the best all-round choice for Ratapani’s forest: wide enough to find birds quickly and bright enough for shady mornings. A 10x42 helps over open reservoirs.',
-  },
-];
 
 export default function BirdwatchingPage() {
   return (

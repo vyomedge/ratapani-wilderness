@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import { ArrowRight, Clock, Mountain, Route, Footprints } from 'lucide-react';
 import JsonLd from '@/components/JsonLd';
+import { FAQS_TREKKING as FAQS } from '@/content/faqs';
 import Checklist from '@/components/Checklist';
 import { PageHero, SectionHead, AnswerBox, DoDont, Plate, FieldNote, Faq, Sources, NextPage, Table, Marker } from '@/components/ui';
 import { PAGES, SAFARI_SITE, absoluteUrl } from '@/lib/site';
 import { pageMetadata, webPageSchema, itemListSchema } from '@/lib/seo';
 
 const META = {
+  section: 'Trekking',
   title: 'Trekking Near Bhopal: Ratapani Treks & Nature Trails',
   description:
     'Trekking near Bhopal in the Ratapani forest: Ginnorgarh Fort trek, Bhimbetka hill walk, Kathotiya and Kerwa trails, with distances, difficulty and rules.',
@@ -113,32 +115,6 @@ const MONTH_STYLE = {
   closed: ['bg-paper-deep text-lichen', 'Monsoon: reserve treks closed, outside trails slippery'],
 };
 
-const FAQS = [
-  {
-    q: 'Which is the best trek near Bhopal?',
-    a: 'For views and history, the Ginnorgarh Fort trek in Ratapani is the most rewarding: about 2 km uphill to a ruined Gond fort with views over the forest. For an easy outing, walk the Bhimbetka rock shelters. For the closest forest trails, try Kerwa (about 15 km) or Kathotiya (about 25 km).',
-  },
-  {
-    q: 'Is trekking allowed in Ratapani Tiger Reserve?',
-    a: 'Only with permission. Ratapani is a tiger reserve, so visitors cannot walk freely in the forest. Treks such as Ginnorgarh Fort need Forest Department permission and a local guide, while Bhimbetka has its own visitor path managed by the Archaeological Survey of India.',
-  },
-  {
-    q: 'How long is the Ginnorgarh Fort trek?',
-    a: 'Visitors describe an uphill walk of about 2 km from the end of the forest road on the Delawadi side, taking 45 minutes to an hour each way. Allow half a day including the drive from Delawadi and time at the fort.',
-  },
-  {
-    q: 'What is the best time for trekking near Bhopal?',
-    a: 'November to February is best, with cool mornings and clear views. October and March are fine with early starts. April to June is very hot, and from July to September trails are slippery and treks inside the tiger reserve are closed.',
-  },
-  {
-    q: 'Is it safe to trek near Ratapani?',
-    a: 'It is safe if you follow the rules: go with a guide and a group, start early, stay on the trail, carry enough water and be out of the forest before dusk. Tigers, leopards and sloth bears live here, so never walk alone in the forest.',
-  },
-  {
-    q: 'Can beginners trek near Bhopal?',
-    a: 'Yes. The Bhimbetka hill walk and the nature walks at Kerwa are easy and suit beginners and families. The Ginnorgarh Fort trek is moderate, a steady climb on a rocky path, and suits anyone with basic fitness.',
-  },
-];
 
 export default function TrekkingPage() {
   return (

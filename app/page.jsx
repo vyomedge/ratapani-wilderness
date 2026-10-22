@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import Img from '@/components/Img';
 import JsonLd from '@/components/JsonLd';
+import { FAQS_HOME as FAQS } from '@/content/faqs';
 import { TeakLeaf, Feather, Moon, Rain, TrailLine } from '@/components/Sketch';
 import { Marker, SectionHead, QuickFacts, FieldNote, Plate, Faq, Sources } from '@/components/ui';
 import { PAGES, SAFARI_SITE, SITE } from '@/lib/site';
@@ -134,32 +135,6 @@ const MANNERS = [
   ['Be out before dark', 'Protected areas close at sunset; dusk is when big cats move.'],
 ];
 
-const FAQS = [
-  {
-    q: 'Where is the Ratapani forest?',
-    a: 'The Ratapani forest lies in the Vindhya hills of Raisen and Sehore districts, Madhya Pradesh, south-east of Bhopal. Its main entry points are 34 to 52 km from Bhopal railway station, so it is the closest large wilderness to the city.',
-  },
-  {
-    q: 'Is Ratapani a tiger reserve or a wildlife sanctuary?',
-    a: 'Both. Ratapani was declared a wildlife sanctuary in 1976 and notified as Ratapani Tiger Reserve on 2 December 2024. The tiger reserve covers about 1,271 km², with a core zone and a buffer zone.',
-  },
-  {
-    q: 'Can you walk or trek inside the Ratapani forest?',
-    a: 'Not freely. Ratapani is tiger habitat, and walking off the safari routes needs Forest Department permission and a guide. Ginnorgarh Fort can be visited on foot with permission, Bhimbetka has its own walking path, and forest trails at Kathotiya and Kerwa near Bhopal are popular for treks.',
-  },
-  {
-    q: 'What is the best time to visit the Ratapani forest?',
-    a: 'October to February is best for walking and birdwatching, with cool mornings and winter migrant birds. July to September is the greenest time, but core safari zones are closed. March to June is hot, but animals gather at the few remaining pools.',
-  },
-  {
-    q: 'What animals and birds live in Ratapani?',
-    a: 'Ratapani has tigers, leopards, sloth bears, dholes, sambar, chital and nilgai, and the Madhya Pradesh Forest Department records 249 bird species, including the Indian paradise flycatcher, crested serpent eagle and white-rumped vulture.',
-  },
-  {
-    q: 'Is Bhimbetka part of the Ratapani forest?',
-    a: 'Yes. The Bhimbetka rock shelters, a UNESCO World Heritage Site, lie within the Ratapani forest about 45 km from Bhopal, and the reserve has a Bhimbetka gate. The rock shelters themselves are managed by the Archaeological Survey of India.',
-  },
-];
 
 export default function HomePage() {
   return (
